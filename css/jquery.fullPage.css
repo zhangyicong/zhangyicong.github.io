@@ -70,15 +70,15 @@ html, body {
     margin-top: -38px;
 }
 .fp-controlArrow.fp-prev {
-    left: 15px;
+    left: 35px;
     width: 0;
-    border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent #fff transparent transparent;
+    border-width: 30px 25px 30px 0;
+    border-color: transparent #f8b551 transparent transparent;
 }
 .fp-controlArrow.fp-next {
-    right: 15px;
-    border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent #fff;
+    right: 35px;
+    border-width: 30px 0 30px 25px;
+    border-color: transparent transparent transparent #f8b551;
 }
 .fp-scrollable {
     overflow: scroll;
