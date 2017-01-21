@@ -182,8 +182,25 @@
 				<div class="section3">
 					<img src="img/bb5.png" class="section3_1"/>
 					<div class="section3_2">
-						<img src="img/bb6.png" />
+						<div class="cusSwiper2">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+									<img src="img/bb6.png" class="section3_3 ani" swiper-animate-effect="flip" swiper-animate-duration="3s" swiper-animate-delay="1s"/>							
+							</div>
+						</div>
 					</div>
+						
+					</div>
+					<div class="section3_4 "></div>
+					<img src="img/bb10.png" class="section3_4_1"/>
+					<div class="section3_5"></div>
+					<img src="img/bb11.png" class="section3_5_1" />
+					<div class="section3_6"></div>
+					<img src="img/bb12.png" class="section3_6_1" />
+					<div class="section3_7"></div>
+					<img src="img/bb13.png" class="section3_7_1" />
+					<div class="section3_8"></div>
+					<img src="img/bb9.png" class="section3_8_1" />
 				</div>
 				
 			</div>
@@ -191,8 +208,39 @@
 			
 			<!--第四瓶-->
 			<div class="section">
-				<h3>第四屏</h3>
-				<p>这是最后一屏</p>
+				<div class="slide">
+					<div class="zuopin1">
+						<p>网站设计</p>
+						<div class="zuopin1_1"></div>
+						<div class="zuopin1_2"></div>
+						<div class="zuopin1_3"></div>
+						<div class="zuopin1_4"></div>	
+					</div>
+					
+				</div>
+				<div class="slide">
+					<div class="zuopin2">
+						<p>电商设计</p>
+						<div class="zuopin2_1"></div>
+						<div class="zuopin2_2"></div>
+						<div class="zuopin2_3"></div>
+						<div class="zuopin2_4"></div>	
+						<div class="zuopin2_5"></div>	
+						<div class="zuopin2_6"></div>	
+					</div>
+				</div>
+				<div class="slide">
+					<div class="zuopin3">
+						<p>线下设计</p>
+						<div class="zuopin3_1"></div>
+						<div class="zuopin3_2"></div>
+						<div class="zuopin3_3"></div>
+						<div class="zuopin3_4"></div>	
+						<div class="zuopin3_5"></div>	
+						<div class="zuopin3_6"></div>	
+					</div>
+				</div>
+				<div class="slide"><h3>移动端</h3></div>
 			</div>
 			
 			
@@ -238,21 +286,21 @@
 			
 			(function draw() {
 				timer = requestAnimationFrame(draw);
-				ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height)
+				ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height);
 					//百分比圆环
 				ctx_2.beginPath();
 				ctx_2.arc(canvas_2.width / 2, canvas_2.height / 2, canvas_2.width / 2 - ctx_2.lineWidth / 2, 0, angle * Math.PI / 180, false);
 				angle++;
-				var percentAge = parseInt((angle / 360) * 100)
+				var percentAge = parseInt((angle / 360) * 100);
 				if(angle > (percent / 100 * 360)) {
-					percentAge = percent
+					percentAge = percent;
 					window.cancelAnimationFrame(timer);
 				};
 				ctx_2.stroke();
 				ctx_2.closePath();
 				ctx_2.save();
 				ctx_2.beginPath();
-				ctx_2.rotate(90 * Math.PI / 180)
+				ctx_2.rotate(90 * Math.PI / 180);
 				ctx_2.font = '28px Arial';
 				ctx_2.fillStyle = '#fff';
 				var text = percentAge + '%';
@@ -266,18 +314,6 @@
 		}
 		window.onload = inte(100);
 	</script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -399,6 +435,17 @@
 							
 							}, 50);
 					}
+					if (index==3) {
+						var mySwiper = new Swiper('.cusSwiper2', {
+							onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+								swiperAnimateCache(swiper); //隐藏动画元素 
+								swiperAnimate(swiper); //初始化完成开始动画
+							},
+							onSlideChangeEnd: function(swiper) {
+								swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+							}
+						})
+					}
 					if (index==5) {
 						var mySwiper5 = new Swiper('.cusSwiper5', {
 							onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
@@ -420,9 +467,7 @@
 		
 		
 		
-		
-//===================
-		})
+		});
 	
 	
 	
