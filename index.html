@@ -42,11 +42,12 @@
 		
 		<div id="bb" >
 			<img src="img/logo.png" />
-			<p>你的眼睛将感谢你接下来的发现</p>
+			<p>感 谢 您 在 百 忙 之 中 的 耐 心 观 看</p>
 			<button id="aa" style="display: none;position: absolute;">开&nbsp;&nbsp;启</button>
-			<div class="circlebb">
-				<canvas id="canvas_1" width="130" height="130"></canvas>
-				<canvas id="canvas_2" width="130" height="130"></canvas>
+			<div class="box">
+			    <div class="tbox">
+			    	<div class="tiao"></div>
+			    </div>
 			</div>
 		</div>
 
@@ -83,6 +84,7 @@
 							<div class="swiper-slide">
 								<img src="img/bb.png" class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="2s" swiper-animate-delay="1s" />
 								<img src="img/bb1.png" class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="2s" swiper-animate-delay="1s"/>
+								<div></div>
 							</div>
 						</div>
 					</div>
@@ -260,7 +262,31 @@
 		
 		</div>
 	</body>
-
+	<script>
+		var i=0;
+	    /*add——创建tbx下的div加文字和变宽度的方法*/
+	    function add(i){
+			    var tbox =$(".tbox");
+	            var tiao =$(".tiao");
+				tiao.css("width",i+"%").html(i+"%");
+			}
+	    /*创建方法（i++循环起来）*/
+		function xh(){
+			if(i>100){
+				$("#aa").css("display","block");
+				return;
+				}
+			if(i<=100){
+				setTimeout("xh()",100)
+				add(i);
+			    i++;
+				}
+			}
+	    /*调用xh()函数*/
+		$(document).ready(function(){	
+				xh();
+			});
+	</script>
 	
 	<script>
 		function inte(percent) {
