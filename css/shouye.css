@@ -190,6 +190,10 @@
 				margin-left: 320px;
 				margin-top: 180px;
 			}
+			.wrap8{
+				margin-left: 480px;
+				margin-top: 180px;
+			}
 			.wrap img{
 				width: 65px;
 				height: 65px;
@@ -263,7 +267,12 @@
 			.wrap7 .right{
 				border: 5px solid #84e403;
 			}
-			
+			.wrap8 .left{
+				border: 5px solid #f66632;
+			}
+			.wrap8 .right{
+				border: 5px solid #f66632;
+			}
 			
 			.wth0 {
 				width: 0;
@@ -393,6 +402,9 @@
 				    width: 203px;
 				    height: auto;
 			}
+
+
+
 
 
 /*==========================第三屏*/
