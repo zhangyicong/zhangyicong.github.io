@@ -43,7 +43,7 @@
 		<div id="bb" >
 			<img src="img/logo.png" />
 			<p>感 谢 您 在 百 忙 之 中 的 耐 心 观 看</p>
-			<button id="aa" style="display: none;position: absolute;">< 开&nbsp;&nbsp;启 ></button>
+			<button id="aa" style="display: none;position: absolute;">< 开 启 ></button>
 			<div class="box">
 			    <div class="tbox">
 			    	<div class="tiao"></div>
@@ -168,6 +168,17 @@
 						<img src="img/aa9.jpg" />
 						<div class="circle">
 							<div class="percent left left7"></div>
+							<div class="percent right wth0"></div>
+						</div>
+						<div class="num">
+							<span>0</span>%
+						</div>
+					</div>
+					<!--========================-->
+					<div class="wrap wrap8">
+						<img src="img/bb5.png" />
+						<div class="circle">
+							<div class="percent left left8"></div>
 							<div class="percent right wth0"></div>
 						</div>
 						<div class="num">
@@ -316,6 +327,7 @@
 		
 		</div>
 	</body>
+	
 	<script>
 		var i=0;
 	    /*add——创建tbx下的div加文字和变宽度的方法*/
@@ -341,12 +353,9 @@
 				xh();
 			});
 	</script>
-	
-		
-	
 	<script>
-		
-		$("#aa").click(function () {
+					
+$("#aa").click(function () {
 			$("#bb").remove();
 				//=========第一屏动画============
 		var mySwiper = new Swiper('.cusSwiper', {
@@ -385,6 +394,7 @@
 						var percent5 = 0;
 						var percent6 = 0;
 						var percent7 = 0;
+						var percent8 = 0;
 						var loading = setInterval(function() {
 							if(percent > 88) {
 								percent =88;
@@ -456,6 +466,15 @@
 							$('.wrap7 .num>span').text(percent7);
 							percent7++;	
 							
+							if(percent8 > 60) {
+								percent8 =60;
+							}else if(percent8 > 49) {
+								$('.circle').addClass('clip-auto');
+								$('.right').removeClass('wth0');
+							}
+							$('.left8').css("-webkit-transform", "rotate(" + (18 / 5) * percent8 + "deg)");
+							$('.wrap8 .num>span').text(percent8);
+							percent8++;	
 							}, 50);
 					}
 					if (index==3) {
@@ -521,7 +540,5 @@
 //				$(this).css("box-shadow", "");
 			})
 	</script>
-	
-	
 	
 </html>
